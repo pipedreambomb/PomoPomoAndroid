@@ -91,7 +91,8 @@ public class PomodoroNotificationService extends BaseNotificationService {
                     R.drawable.ic_stat_pomodoro,
                     R.drawable.ic_action_start_phone,
                     R.drawable.ic_action_stop_phone,
-                    R.drawable.ic_action_reset_96dp);
+                    R.drawable.ic_action_reset_96dp,
+                    R.drawable.ic_skip_next_white_48dp);
             final Intent contentIntent = new Intent(context, MainActivity.class);
             return builder
                     .buildNotificationPhone(PendingIntent.getActivity(context, 0, contentIntent, 0));

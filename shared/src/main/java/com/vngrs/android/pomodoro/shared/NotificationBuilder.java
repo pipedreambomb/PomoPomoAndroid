@@ -20,9 +20,11 @@ public class NotificationBuilder {
     private static final int ID_STOP = 3;
     private static final int ID_RESET = 6;
     private static final int ID_DISMISS = 7;
+    private static final int ID_SKIP = 8;
 
     private final Context context;
     private final PomodoroMaster pomodoroMaster;
+    private final int actionSkipIcon;
     private int notificationIcon;
     private int actionStartIcon;
     private int actionStopIcon;
@@ -33,13 +35,15 @@ public class NotificationBuilder {
                                @DrawableRes int notificationIcon,
                                @DrawableRes int actionStartIcon,
                                @DrawableRes int actionStopIcon,
-                               @DrawableRes int actionResetIcon) {
+                               @DrawableRes int actionResetIcon,
+                               @DrawableRes int actionSkipIcon) {
         this.context = context;
         this.pomodoroMaster = pomodoroMaster;
         this.notificationIcon = notificationIcon;
         this.actionStartIcon = actionStartIcon;
         this.actionStopIcon = actionStopIcon;
         this.actionResetIcon = actionResetIcon;
+        this.actionSkipIcon = actionSkipIcon;
     }
 
     @NonNull
@@ -106,6 +110,7 @@ public class NotificationBuilder {
 
         NotificationCompat.Builder builder = buildBaseNotification(/* isPhone */ false)
                 .addAction(buildResetAction(context))
+                .addAction(buildSkipAction(context))
                 .extend(extender);
 
         return builder.build();
@@ -146,6 +151,20 @@ public class NotificationBuilder {
                 PendingIntent.getBroadcast(context, ID_RESET, resetActionIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         return new NotificationCompat.Action.Builder(actionResetIcon,
                 context.getString(R.string.reset), resetActionPendingIntent).build();
+    }
+
+    private NotificationCompat.Action buildSkipAction(@NonNull Context context) {
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                context,
+                ID_SKIP,
+                BaseNotificationService.SKIP_INTENT,
+                PendingIntent.FLAG_CANCEL_CURRENT);
+
+        return  new NotificationCompat.Action.Builder(
+                actionSkipIcon,
+                context.getString(R.string.skip),
+                pendingIntent).build();
     }
 
     public String titleForActivityType(@NonNull Context context) {

@@ -34,7 +34,8 @@ public class PomodoroNotificationService extends BaseNotificationService {
                 R.mipmap.ic_launcher,
                 R.drawable.ic_action_start_96dp,
                 R.drawable.ic_action_stop_96dp,
-                R.drawable.ic_action_reset_96dp);
+                R.drawable.ic_action_reset_96dp,
+                R.drawable.ic_skip_next_white_48dp);
         return builder.buildNotificationWear(displayIntent);
     }
 }

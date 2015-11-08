@@ -4,6 +4,7 @@
   <!--<string name="idle">Idle</string>-->
   <string name="stop">Stop</string>
   <string name="reset">Reset</string>
+  <string name="skip">Skip</string>
 
   <string name="title_break_long">Long Break</string>
   <string name="title_pomodoro_no">Working on Pomodoro #%d</string>

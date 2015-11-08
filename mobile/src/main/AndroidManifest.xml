@@ -42,6 +42,7 @@
         <action android:name="com.vngrs.android.pomodoro.action.STOP" />
         <action android:name="com.vngrs.android.pomodoro.action.PAUSE" />
         <action android:name="com.vngrs.android.pomodoro.action.RESUME" />
+        <action android:name="com.vngrs.android.pomodoro.action.SKIP" />
         <action android:name="com.vngrs.android.pomodoro.action.RESET" />
         <action android:name="com.vngrs.android.pomodoro.action.DISMISS" />
         <action android:name="com.vngrs.android.pomodoro.action.UPDATE" />

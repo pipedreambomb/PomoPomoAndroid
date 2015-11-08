@@ -52,12 +52,14 @@ public abstract class BaseNotificationService extends IntentService implements
     public static final String ACTION_DISMISS = "com.vngrs.android.pomodoro.action.DISMISS";
     public static final String ACTION_UPDATE = "com.vngrs.android.pomodoro.action.UPDATE";
     public static final String ACTION_FINISH_ALARM = "com.vngrs.android.pomodoro.action.ALARM";
+    public static final String ACTION_SKIP = "com.vngrs.android.pomodoro.action.SKIP";
 
     public static final Intent START_INTENT = new Intent(ACTION_START);
     public static final Intent STOP_INTENT = new Intent(ACTION_STOP);
     public static final Intent RESET_INTENT = new Intent(ACTION_RESET);
     public static final Intent UPDATE_INTENT = new Intent(ACTION_UPDATE);
     public static final Intent FINISH_ALARM_INTENT = new Intent(ACTION_FINISH_ALARM);
+    public static final Intent SKIP_INTENT = new Intent(ACTION_SKIP);
 
     private static final int REQUEST_UPDATE = 1;
     private static final int REQUEST_FINISH = 2;
